@@ -11,13 +11,13 @@ SELECT pid, name, quantity FROM Products WHERE priceUSD > 1.25;
 SELECT ordno, aid FROM Orders;
 
 --5. This query shows the names and cities of customers not in Dallas
-SELECT name, city FROM Customers WHERE city =! 'Dallas';
+SELECT name, city FROM Customers WHERE city != 'Dallas';
 
 --6.This query of shows the names of all agents in New York and Newark
 SELECT name FROM Agents WHERE city = 'New York' OR city = 'Newark';
 
 --7. This query shows all data for not in New York or Newark that cost USD 1 or less
-SELECT * FROM Products WHERE city <> 'New York' AND city <> 'Newark' AND priceUSD <= 1.00;
+SELECT * FROM Products WHERE city != 'New York' AND city != 'Newark' AND priceUSD <= 1.00;
 
 --8. This query shows all orders in January and March 
 SELECT * FROM Orders WHERE mon = 'jan' OR mon = 'mar';
