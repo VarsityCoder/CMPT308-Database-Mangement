@@ -68,5 +68,5 @@ and discount in (
     select discount
     from customers
     where city = 'Dallas' or city = 'Kyoto'
-)
+);
 
