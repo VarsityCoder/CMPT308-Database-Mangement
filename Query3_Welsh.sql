@@ -80,17 +80,16 @@ LIMIT 1
 
 
 --11
-select city, name
-from customers
-where city IN (
-SELECT city from(
-SELECT products.city, count(products.city) 
+SELECT custumer.name = products.city
+customers.city(SELECT city, count(city)
+FROM products 
+GROUP BY city
+HAVING count(city) IN
+SELECT max(count(city) 
+FROM (SELECT count(city)
 FROM products
-GROUP BY products.city 
-ORDER BY count DESC
-LIMIT 1
+GROUP BY city)
 )sub1
-)
 
 --12
 SELECT *
