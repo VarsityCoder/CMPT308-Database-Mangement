@@ -22,13 +22,16 @@ from customers
 where city = 'Kyoto'))
  
 -- 4
-select distinct pid
-from orders
-join orders on customers.cid = order.aid
-where city = 'Kyoto';
-
+select distinct o1.pid
+from orders o1, orders o2, customers c
+where o2.cid = c.cid and c.city = 'Kyoto' AND o1.aid = o2.aid
+order by o1.pid
 --5
 select name 
 from customers 
 where cid not in (
 select cid from orders)
+
+--6
+
+--7
