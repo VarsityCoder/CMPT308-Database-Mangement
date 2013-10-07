@@ -33,5 +33,8 @@ where cid not in (
 select cid from orders)
 
 --6
+SELECT name
+FROM customers left outer join orders on orders.cid = customers.cid
+where orders.ordno IS NULL
 
 --7
